@@ -1,0 +1,54 @@
+<div class="container">
+
+    <form class="col-lg-6 offset-lg-3 my-5" autocomplete="off" #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+       <legend class="text-center" style="color: #00e8e8;">Registration Form</legend>
+       <hr class="text-center w-50">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="nm" #nm="ngModel" ngModel [(ngModel)]="name" class="form-control">
+        </div>
+        <div class="form-group" style="display: none;">
+            <label>Id</label>
+            <input type="text" name="id" #id="ngModel" ngModel [(ngModel)]="idd" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="el" #el="ngModel" ngModel  [(ngModel)]="email" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="pw" #pw="ngModel" ngModel  [(ngModel)]="pass" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="number" name="mb" #mb="ngModel" ngModel  [(ngModel)]="mobile" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+        <button class="btn btn-primary" (click)="updateUser()">Update</button>
+    </form>
+</div>
+
+
+<div class="container">
+    <table class="table table-stripped table-responsive">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Mobile</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let list of listData">
+            <td>{{list.name}}</td>
+            <td>{{list.email}}</td>
+            <td>{{list.password}}</td>
+            <td>{{list.number}}</td>
+            <td> <button class="btn btn-primary" type="submit" (click)="showUpdateData(list)">Update</button> </td>
+            <td> <button class="btn btn-primary" type="submit" (click)="deleteData(list._id)">Delete</button> </td>
+        </tr>
+    </table>
+</div>   

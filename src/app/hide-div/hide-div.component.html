@@ -1,0 +1,35 @@
+<!-- Hide &show element using angular ng-hide directive -->
+<body ng-app="">
+    
+Hide HTML: <input type="checkbox" ngModel ng-model="myVar">
+<div ng-hide="myVar">
+<h1>Welcome</h1>
+<p>Welcome to my home.</p>
+</div>
+</body>
+
+<!-- write array &put values in dropdown list  -->
+<select>
+  <option *ngFor="let arr of array">{{arr}}</option>
+</select>
+
+<input type="text" [(ngModel)]="name">
+{{name}}
+
+<!-- hide using javascript -->
+<section>
+
+    <p id="myP">This is a p element.</p>
+    
+    <button type="submit" onclick="myFunction()">Hide content of p</button>
+    
+    <script>
+    function myFunction() {
+      document.getElementById("myP").style.display = "none";
+    }
+    </script>
+    
+</section>
+
+
+
